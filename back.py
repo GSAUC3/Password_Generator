@@ -39,10 +39,10 @@ def Del(password):
     conn.commit()
     conn.close() 
 
-def edit(a,b,c):
+def edit(site,user):
     conn= sq.connect(db)
     c=conn.cursor()
-    c.execute("UPDATE data SET site=(?),user=(?) WHERE password=(?)",(a,b,c))
+    c.execute("UPDATE data SET site=? WHERE user=(?)",(site,user))
     conn.commit()
     conn.close()
     

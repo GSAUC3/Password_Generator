@@ -101,7 +101,7 @@ class window:
         self.pa.set(value[2])
         
     def update(self):
-        back.edit(self.site.get(),self.user_id.get(),self.pa.get())
+        back.edit(self.site.get(),self.user_id.get())
         
         
         
