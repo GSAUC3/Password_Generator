@@ -32,17 +32,17 @@ def show():
     conn.close()
     return i
 
-def Del(site):
+def Del(password):
     conn= sq.connect(db)
     c=conn.cursor()
-    c.execute("DELETE FROM data WHERE site=(?)",(site,))
+    c.execute("DELETE FROM data WHERE password=(?)",(password,))
     conn.commit()
     conn.close() 
 
 def edit(a,b,c):
     conn= sq.connect(db)
     c=conn.cursor()
-    c.execute("UPDATE secure SET site=?,user=?,password=?",(a,b,c))
+    c.execute("UPDATE data SET site=(?),user=(?) WHERE password=(?)",(a,b,c))
     conn.commit()
     conn.close()
     

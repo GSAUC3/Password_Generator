@@ -39,9 +39,9 @@ class window:
         e['state']='readonly'
         self.length.set('Set password length')
         
-        ttk.Button(self.root,text='Generate',padding=5,width=20,command=self.generate).grid(row=1,column=2)
-        ttk.Button(self.root,text='Save to Database',width=20,padding=5,command=self.save).grid(row=3,column=2)
-        ttk.Button(self.root,text='Delete',width=20,padding=5,command=self.erase).grid(row=2,column=2)
+        ttk.Button(self.root,text='Generate',padding=5,style='success.Outline.TButton',width=20,command=self.generate).grid(row=1,column=2)
+        ttk.Button(self.root,text='Save to Database',style='success.TButton',width=20,padding=5,command=self.save).grid(row=3,column=2)
+        ttk.Button(self.root,text='Delete',width=20,style='danger.TButton',padding=5,command=self.erase).grid(row=2,column=2)
         ttk.Button(self.root,text='Show All',width=20,padding=5,command=self.view).grid(row=3,column=0)
         ttk.Button(self.root,text='Update',width=20,padding=5,command=self.update).grid(row=3,column=1)
 
@@ -104,6 +104,7 @@ class window:
         back.edit(self.site.get(),self.user_id.get(),self.pa.get())
         
         
+        
     def view(self):
         if back.check() is False:
             messagebox.showerror('Attention Amigo!','Database is EMPTY!')
@@ -114,7 +115,7 @@ class window:
     def erase(self):
         selected = self.tree.focus()
         value=self.tree.item(selected,'value')
-        back.Del(value[0])
+        back.Del(value[2])
         self.refresh() 
         
 
@@ -155,7 +156,7 @@ class window:
         
 
 if __name__ == '__main__':
-    win=Style(theme='superhero').master
+    win=Style(theme='darkly').master
     # win=Tk() # use this if you don't have ttkbootstrap package
 
     name='Password Generator'
