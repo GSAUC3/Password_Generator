@@ -4,8 +4,8 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 import back
-import csv
-from ttkbootstrap import *
+import csv  #install csv using  'pip install python-csv' command 
+from ttkbootstrap import * # pip install bootstrap-py
 
 
 class window:
