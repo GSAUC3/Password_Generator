@@ -142,11 +142,11 @@ class window:
 
     def export(self):
         pop=Toplevel(self.root)
-        pop.geometry('200x80')
+        pop.geometry('300x100')
         self.v = StringVar()
         Label(pop,text='Save File Name as').pack()
         ttk.Entry(pop,textvariable=self.v).pack()
-        ttk.Button(pop,text='Save',width=20,command=lambda:exp(self.v.get())).pack()
+        ttk.Button(pop,text='Save',width=18,command=lambda:exp(self.v.get())).pack(pady=5)
         def exp(x):
             with open(x + '.csv','w',newline='') as f:
                  chompa = csv.writer(f,dialect='excel')
