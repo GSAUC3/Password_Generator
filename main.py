@@ -1,5 +1,4 @@
 import random
-import array
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
@@ -101,7 +100,10 @@ class window:
         self.pa.set(value[2])
         
     def update(self):
-        back.edit(self.site.get(),self.user_id.get())
+        selected = self.tree.focus()
+        value=self.tree.item(selected,'value')
+        back.edit(self.site.get(),self.user_id.get(),self.pa.get())
+        self.refresh() 
         
         
         
@@ -125,7 +127,7 @@ class window:
         
     def generate(self):
         if self.length.get() == 'Set password length':
-            messagebox.showerror('Attention!',"You forgot to SELECT\n CHOMPAAAAAA!!!")
+            messagebox.showerror('Attention!',"You forgot to SELECT")
         else:
             a=''
             for x in range(int(int(self.length.get())/4)):

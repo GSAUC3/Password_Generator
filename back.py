@@ -9,7 +9,7 @@ def connect():
                  CREATE TABLE IF NOT EXISTS data (
                      site text,
                      user text,
-                     password text
+                     password text primary key
 
                  )              
     """)
@@ -39,10 +39,10 @@ def Del(password):
     conn.commit()
     conn.close() 
 
-def edit(site,user):
+def edit(site,user,password):
     conn= sq.connect(db)
     c=conn.cursor()
-    c.execute("UPDATE data SET site=? WHERE user=(?)",(site,user))
+    c.execute("UPDATE data SET site=?, user=(?) WHERE password=(?) ",(site,user,password))
     conn.commit()
     conn.close()
     
