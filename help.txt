@@ -1,0 +1,22 @@
+Random Password Generator App
+
+You can choose the length of the password and hit the generate button. 
+It will produce a random string of the specified length.
+Then you have to fill up the fields to specify your user ID and site 
+or name of the organisation associated (ex. facebook, insta) 
+with the password generated. 
+
+For more options press right click of your mouse button.
+
+
+Export as csv
+You can export all the contents of your database as a .csv file.
+Steps -
+- right click anywhere
+- choose export option
+- give a file name
+- hit the save button 
+
+And DONE!! 
+
+Your file is saved where the main python file is, in that same directory. 

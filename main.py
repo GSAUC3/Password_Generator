@@ -1,4 +1,4 @@
-import random
+import random, webbrowser
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
@@ -15,7 +15,7 @@ class window:
                      'I', 'J', 'K', 'M', 'N', 'O', 'p', 'Q',
                      'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z']
     sym=['@', '#', '$', '%', '=', ':', '?', '.', '/', '|', '~', '>',
-           '*', '(', ')', '<']
+           '*', '<']
     def __init__(self,root,geo,title) -> None:
         self.root=root
         self.root.title(title)
@@ -69,9 +69,13 @@ class window:
         self.menu.add_command(label='Export',command=self.export)
         self.menu.add_separator()
         self.menu.add_command(label='Delete',command=self.erase)
+        self.menu.add_command(label='Help',command=self.help)
         self.menu.add_separator()
         self.menu.add_command(label='Exit',command=self.root.quit)
         self.root.bind("<Button-3>",self.poppin)
+
+    def help(self):
+        webbrowser.open('help.txt')
 
     def refresh(self):
         self.table()
@@ -132,6 +136,7 @@ class window:
             a=''
             for x in range(int(int(self.length.get())/4)):
                 a=self.bana()+a
+                
                 self.pa.set(a)
                       
 
