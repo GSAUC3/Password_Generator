@@ -13,3 +13,7 @@ Steps -
 And DONE!! 
 
 Your file is saved where the main python file is, in that same directory. 
+
+# Screenshot(s)
+![Screenshot (24)](https://user-images.githubusercontent.com/55054089/123284332-cc20a900-d529-11eb-9e6c-514b1c4c0701.png)
+
