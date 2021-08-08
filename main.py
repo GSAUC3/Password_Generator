@@ -135,17 +135,15 @@ class window:
         else:
             a=''
             for x in range(int(int(self.length.get())/4)):
-                a=self.bana()+a
+                    a0=random.choice(self.uc)
+                    a1=random.choice(self.lc)
+                    a2=random.choice(self.sym)
+                    a3=random.choice(self.digits)
                 
-                self.pa.set(a)
+                    a=a0+a1+a2+a3+a
+                    
+                    self.pa.set(a)
                       
-
-    def bana(self):
-        a=random.choice(self.uc)
-        a1=random.choice(self.lc)
-        a2=random.choice(self.sym)
-        a3=random.choice(self.digits)
-        return(a+a1+a2+a3)
 
     def export(self):
         pop=Toplevel(self.root)
